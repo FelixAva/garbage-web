@@ -1,11 +1,12 @@
-import React from "react";
 import { Controller } from "@/interfaces/firebase.interface";
 
 const ControllerCard = ({ id, isActive,name }: Controller) => {
-
+  console.log(isActive)
   return (
-    <div style={{borderWidth: 1, borderColor: 'black', borderRadius: 10}}>
-      
+    <div className="border-2 rounded-md w-md h-36">
+      <p>{ id }</p>
+      <p>Status: { isActive ? "On" : "Off" }</p>
+      <p>{ name }</p>
     </div>
   );
 };

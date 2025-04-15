@@ -19,5 +19,5 @@ export interface Position {
 export interface Controller {
   id: string;
   isActive: boolean;
-  type: string;
+  name: string;
 }

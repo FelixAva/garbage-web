@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import useControllers from '@/hooks/useControllers';
 import ControllerCard from '@/components/ControllerCard';
 import { Controller } from '@/interfaces/firebase.interface';
+import { updateControllerState } from './api/controllers.firebase';
+import '@/styles/app.css';
 
 function App() {
-  const [isActive, setIsActive] = useState<boolean>(false);
-
   // const {
   //   positions,
   //   positionsSubscription
@@ -22,7 +22,7 @@ function App() {
   }, []);
 
   const onPress = () => {
-    setIsActive(!isActive);
+    if (controllers) updateControllerState(controllers[0].id, !controllers[0].isActive);
   };
 
   return (
@@ -34,11 +34,13 @@ function App() {
         </h1>
       ))
     } */}
-    {
-      controllers?.map(( ctrl: Controller, indx: number ) => (
-        <ControllerCard key={indx} {...ctrl}/>
-      ))
-    }
+    <div className="justify-center mt-4 mb-4 flex gap-2">
+      {
+        controllers?.map(( ctrl: Controller, indx: number ) => (
+          <ControllerCard key={indx} {...ctrl}/>
+        ))
+      }
+    </div>
       <button onClick={ () => onPress() }> On/Off </button>
     </>
   )

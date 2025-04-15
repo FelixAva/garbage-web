@@ -16,9 +16,10 @@ const subscribeToControllers =  ( setControllers: (data: any) => void ) => {
 
       // Convert the controller data to list of controllers
       for (let ctrl in data) {
-        const controller = {
+        const controller: Controller = {
           id: ctrl,
-          ...data[ctrl]
+          name: data[ctrl].name,
+          isActive: data[ctrl].is_active,
         };
 
         ctrlsList.push(controller);

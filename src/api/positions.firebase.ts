@@ -14,8 +14,6 @@ const subscribeToPositions = ( setPositions: (data: any) => void ) => {
         console.log("Empty reference positions");
       }
 
-      console.log(data);
-
       // Convert the position data to list of positions
       for (let posKey in data) {
         const posData: Position = data[posKey];
