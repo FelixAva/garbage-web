@@ -5,10 +5,6 @@ import { Position } from '@/interfaces/firebase.interface';
 const usePositions = () => {
   const [positions, setPositions] = useState<Position[]>();
 
-  function setData() {
-
-  }
-
   const positionsSubscription = () => {
     subscribeToPositions(setPositions);
   };

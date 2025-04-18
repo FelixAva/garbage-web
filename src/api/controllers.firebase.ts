@@ -41,7 +41,6 @@ const updateControllerState = async ( controller: string, newState: boolean ) =>
 
   try {
     await update(ref(database), updates);
-    alert(`Status de ${controller} actualizado a ${newState}`)
   } catch (err) {
     console.error(`Error updating the status: ${ err }`)
   }

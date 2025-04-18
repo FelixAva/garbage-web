@@ -2,7 +2,7 @@ import { Timestamp } from "firebase/firestore/lite";
 
 export interface Category {
   name: string;
-  count: number;
+  counter: number;
 }
 
 export interface Count {

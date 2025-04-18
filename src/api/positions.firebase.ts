@@ -22,7 +22,7 @@ const subscribeToPositions = ( setPositions: (data: any) => void ) => {
         for (let cat in posData.categories) {
           categories.push({
             name: cat,
-            count: posData.categories[cat].count
+            counter: posData.categories[cat].counter
           });
         }
 
